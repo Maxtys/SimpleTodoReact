@@ -1,2 +1,0 @@
-# SimpleTodoReact
-Created with CodeSandbox
