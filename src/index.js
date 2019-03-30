@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import "./styles.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 class TodoInput extends React.Component {
   state = {
     value: "1111"
@@ -10,12 +12,14 @@ class TodoInput extends React.Component {
     return (
       <div>
         <input
+          class="form-control"
           value={this.state.value}
           onChange={event => {
             this.setState({ value: event.target.value });
           }}
         />
         <button
+          class="btn btn-primary btn-lg"
           onClick={() => {
             this.props.onAddItem(this.state.value);
             this.setState({ value: "" });
@@ -32,7 +36,7 @@ class TodoList extends React.Component {
   render() {
     return (
       <div>
-        <ul>{this.props.children}</ul>
+        <ul class="list-group">{this.props.children}</ul>
       </div>
     );
   }
@@ -40,7 +44,7 @@ class TodoList extends React.Component {
 
 class TodoItem extends React.Component {
   render() {
-    return <li>{this.props.text}</li>;
+    return <li class="list-group-item">{this.props.text}</li>;
   }
 }
 
